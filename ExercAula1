@@ -1,0 +1,65 @@
+package main
+import "fmt"
+func main(){
+// Exercício 1.
+	//Utilizando a palavra reservada var declare uma variável numérica do tipo int.
+	//Atribua um valor a essa variável.
+	//Printe na tela o seu valor.
+	//Repita para 3 variáveis diferentes.
+
+    dd
+
+
+    // Exercicio 2.
+	//Utilizando a marmota :=, declare duas variáveis: a e b.
+	//Atribua os seguintes valores a elas, respectivamente: 230 e 27.
+	//Crie variáveis para representar os resultados das operações matemáticas soma (a + b) e subtração (a - b).
+	//Printe na tela os valores de todas as variáveis, um em cada linha.
+
+
+
+
+    //Exercicio 3
+	//Calcule o valor total de uma compra que tem 3 itens representando o preço de todos eles em float64.
+	// Todos os itens dessa compra precisams er comprados em mais de uma unidade.
+
+
+
+//Exercício 4
+    //Declare duas variáveis do tipo string, uma vai receber o seu nome e outra a sua cor preferida.
+	//Printe na tela uma frase utilizando os dois valores e o fmt.Printf() e o especificador de formato %s
+
+
+
+
+    // Exercício 5 (Bool)
+		//Declare 5 variáveis diferentes e atribua operações relacionais a elas.
+		//Printe na tela uma linha para cada variável com o seu tipo e valor.
+
+
+
+
+// Exercício 6
+        // Escreva um programa que contenha um array de strings.
+	// O valor de cada elemento deve ser o número do índice escrito por extenso.
+	// Printe na tela o tipo do seu array e os valores de seus elementos.
+
+
+
+
+
+//Slice Exercício 7
+		//Crie uma slice de string de tamanho 12 usando a função make() e atribua os signos do zodíaco
+        // a cada um dos elementos individualmente.
+		//Printe na tela essa slice mostrando todos os seus elementos.
+		//Printe também uma fatia dessa slice do índice 0 ao 2.
+
+
+
+
+        //Maps = exemplo: dicionário
+		//Crie um map chamado ano onde as chaves (key) sao os números dos meses do ano e o valor(value) 
+        //é o nome que esse mês representa
+
+
+}
