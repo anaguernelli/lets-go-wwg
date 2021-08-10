@@ -1,0 +1,221 @@
+package main
+
+import (
+"fmt"
+)
+
+type Apartamento struct {
+	numero            int
+	nomeProprietaria  string
+	possuiVagaGaragem bool
+}
+
+func main() {
+	ap1 := Apartamento{
+		numero:            1301,
+		nomeProprietaria:  "Ana",
+		possuiVagaGaragem: true,
+	}
+	fmt.Printf("%+v\n", ap1) //nomes dos campos
+	fmt.Printf("O apartamento numero %d tem como prop a %s. Ele tem vaga de garagem? %t", ap1.numero, ap1.nomeProprietaria, ap1.possuiVagaGaragem)
+	
+
+}
+
+//------struct2------
+
+type Pessoa struct {
+	nome         string
+	idade        int
+	corPreferida string
+}
+
+func main() {
+	pessoa1 := Pessoa{
+		nome:         "Talita",
+		idade:        29,
+		corPreferida: "pêssego",
+	}
+
+	pessoa2 := Pessoa{
+		nome:         "Juliana",
+		idade:        41,
+		corPreferida: "lilás",
+	}
+
+	pessoa3 := Pessoa{
+		nome:         "Fernanda",
+		idade:        37,
+		corPreferida: "turquesa",
+	}
+
+	fmt.Printf("dados das pessoas: %s, %s e %s\n", pessoa1.nome, pessoa2.nome, pessoa3.nome)
+	fmt.Printf("%s: tem %d anos e sua cor preferida é %s\n", pessoa1.nome, pessoa1.idade, pessoa1.corPreferida)
+	fmt.Printf("%s: tem %d anos e sua cor preferida é %s\n", pessoa2.nome, pessoa2.idade, pessoa2.corPreferida)
+	fmt.Printf("%s: tem %d anos e sua cor preferida é %s\n", pessoa3.nome, pessoa3.idade, pessoa3.corPreferida)
+}
+
+//--------------------- ifs elses ------------------------
+
+idade := 18
+	if idade >= 60 {
+		fmt.Println("idade de uma pessoa idosa")
+		return
+		//com o return ele vai ent ignorar esse bloco e considerar
+		//o print de baixo
+	}
+	fmt.Println("idade de uma pessoa jovem")
+
+    //------------------ exercicio 1 dos ifs com return!! ----------------------
+
+	anoNascimento := 2010
+	anoAtual := 2021
+
+	idade := anoAtual - anoNascimento
+
+	if idade >= 16 {
+		fmt.Printf("Essa pessoa tem %d anos \nPortanto, já pode votar!", idade)
+		return
+	}
+	fmt.Printf("Essa pessoa tem %d \nPortanto, ainda não pode votar!", idade)
+}
+
+//========== exercicio 2 ===========
+
+	 numero := -15
+	
+	if numero > 0 {
+	fmt.Printf("O numero é positivo")
+	} else if numero < 0 {
+	fmt.Println("O numero é negativo")
+	} else {
+	fmt.Println("O numero é 0")
+	}
+
+    // ================= exercicio 3 com switch ====================
+	
+    idade := 20
+	switch {
+	case idade >= 60:
+		fmt.Printf("a pessoa tem idade %d e é idosa\n", idade)
+	case idade >= 18 && idade < 60:
+		fmt.Printf("a pessoa tem idade %d e é maior de idade\n", idade)
+	case idade < 0:
+		fmt.Println("o valor é invalido")
+
+	default:
+		fmt.Printf("a pessoa tem %d anos e é menor", idade)
+
+	}
+
+	//======================= exercicio 3 com if ======================
+	idade := -1
+
+	if idade > 1 && idade <= 17 {
+		fmt.Printf("Esta pessoa tem %d anos, é menor de idade\n", idade)
+	} else if idade >= 18 && idade < 60 {
+		fmt.Printf("Esta pessoa tem %d anos, é maior de idade\n", idade)
+	} else if idade >= 60 {
+		fmt.Println("Esta pessoa pessoa é idosa")
+	} else if idade < 0 {
+	fmt.Println("valor invalidooo")
+	}
+}
+
+//===================== exercicio switch =========================
+
+//declarar variavel chamada hora e atribuir valor int a ela
+	//usadno switch elencar cases e printar na tela se a hora corresponde
+	// ao periodo manha, tarde noite ou madruga
+
+	hora := 5
+
+	switch {
+	case hora >= 12 && hora <= 17:
+		fmt.Printf("são %d da tarde", hora)
+	case hora >= 18 && hora <= 22:
+		fmt.Printf("são %d horas da noite", hora)
+	case hora >= 6 && hora < 12:
+		fmt.Printf("são %d da manhã", hora)
+	case hora >= 00 && hora < 6:
+		fmt.Printf("são %d da madruga", hora)
+
+	default:
+		fmt.Println("o valor informado não é um horário válido!!")
+
+	}
+
+//============= começando FOR ================
+func main() {
+	//exercicio 1
+
+	i := 13
+
+	for i <= 27 {
+		fmt.Println(i)
+		i++
+
+	}
+	fmt.Println("olha aqui mano: ", i)
+
+}
+
+
+// ===================exercicio2==================
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	//exercicio 2
+	//hora := 0
+	//for hora < 24 {
+	//	fmt.Printf("%.2d:00\n", hora)
+	//	hora++}
+
+	hora := 0
+	for hora < 24 {
+		for minuto := 0; minuto < 60; minuto++ {
+			for segundo := 0; segundo < 60; segundo++ {
+				fmt.Printf("%.2d:%.2d\n", hora, minuto)
+			}
+		}
+		hora++ // a hora que pula de numero
+
+	}
+
+} 
+
+//====================================================
+var nome = "TaeHyung"
+var hora = 18
+
+func main() {
+	cumprimento := gereCumprimento(nome, hora)
+	fmt.Println(cumprimento)
+}
+
+func gereCumprimento(nome string, hora int) string {
+
+	cumprimento := ""
+
+	switch {
+	case hora >= 12 && hora < 18:
+		cumprimento = "boa tarde"
+	case hora >= 18 && hora <= 23:
+		cumprimento = "boa noite"
+	case hora >= 6 && hora < 12:
+		cumprimento = "boa madrugs"
+	case hora >= 00 && hora < 6:
+		cumprimento = "bom dia"
+
+	default:
+		cumprimento = "alguma coisa errada amor"
+	
+
+	}
+	frase := fmt.Sprintf("%s, %s! tudo bem? hihii", cumprimento, nome)
+	return frase
+}
